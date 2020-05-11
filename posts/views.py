@@ -10,8 +10,7 @@ def get_posts(request):
     prior to 'now' and render to the 'blogposts.html' template
     """
 
-    posts = Post.objects.filter(published_date__lte=timezone.now()
-                                ).order_by('-published_date')
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blogposts.html', {'posts': posts})
 
 
